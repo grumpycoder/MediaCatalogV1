@@ -30,27 +30,28 @@ namespace MediaCatalog.DataAccess
             get { return Context.Media; }
         }
 
-        public IQueryable<Person> Staff
+        public IQueryable<Staff> Staff
         {
-            get { return Context.Persons.Where(p => p.StaffList.Any()); }
+            //get { return Context.Persons.Where(p => p.StaffList.Any()); }
+            get { return Context.Staff; }
         }
 
         public IQueryable<Person> Persons
         {
-            get { return Context.Persons; }
+            get { return Context.Person; }
         }
 
         public IQueryable<MediaType> MediaTypes
         {
-            get { return Context.MediaTypes; }
+            get { return Context.MediaType; }
         }
         public IQueryable<Role> Roles
         {
-            get { return Context.Roles; }
+            get { return Context.Role; }
         }
         public IQueryable<Company> Companies
         {
-            get { return Context.Companies; }
+            get { return Context.Company; }
         }
 
 

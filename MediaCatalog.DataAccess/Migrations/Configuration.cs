@@ -20,7 +20,7 @@ namespace MediaCatalog.DataAccess.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            context.Persons.AddOrUpdate(
+            context.Person.AddOrUpdate(
               p => p.LastName,
               new Person { LastName = "Andrew", FirstName = "Peters" },
               new Person { LastName = "Brice", FirstName = "Lambson" },
@@ -28,7 +28,7 @@ namespace MediaCatalog.DataAccess.Migrations
             );
             context.SaveChanges();
 
-            context.Companies.AddOrUpdate(
+            context.Company.AddOrUpdate(
                 c => c.Name,
                 new Company { Id = 1, Name = "Research Press Company, Inc." },
                 new Company { Id = 2, Name = "Independent Publishers Group" },
@@ -37,7 +37,7 @@ namespace MediaCatalog.DataAccess.Migrations
             );
             context.SaveChanges();
 
-            context.MediaTypes.AddOrUpdate(
+            context.MediaType.AddOrUpdate(
                 t => t.Name,
                 new MediaType { Id = 1, Name = "Book" },
                 new MediaType { Id = 2, Name = "Audio" },

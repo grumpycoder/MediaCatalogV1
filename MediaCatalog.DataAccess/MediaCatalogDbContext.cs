@@ -1,45 +1,33 @@
 ﻿using MediaCatalog.Model;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace MediaCatalog.DataAccess
 {
-    public class MediaCatalogDbContext : DbContext
+    public partial class MediaCatalogDbContext : DbContext
     {
         public MediaCatalogDbContext()
-            : base(nameOrConnectionString: "MediaCatalog")
+            : base("name=MediaCatalogDbContext")
         {
-
         }
 
-        static MediaCatalogDbContext()
-        {
-            Database.SetInitializer<MediaCatalogDbContext>(new DropCreateDatabaseIfModelChanges<MediaCatalogDbContext>());
-        }
+        public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<Media> Media { get; set; }
+        public virtual DbSet<MediaType> MediaType { get; set; }
+        public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Staff> Staff { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Use singular table names
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Media>()
+                .HasMany(e => e.Staff)
+                .WithRequired(e => e.Media)
+                .WillCascadeOnDelete(false);
 
-            // Disable proxy creation and lazy loading; not wanted in this service context.
-            Configuration.ProxyCreationEnabled = false;
-            Configuration.LazyLoadingEnabled = false;
-
-            modelBuilder.Configurations.Add(new MediaConfiguration());
-            modelBuilder.Configurations.Add(new StaffConfiguration());
-
-
-
+            modelBuilder.Entity<Person>()
+                .HasMany(e => e.Staff)
+                .WithRequired(e => e.Person)
+                .WillCascadeOnDelete(false);
         }
-
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Media> Media { get; set; }
-        public DbSet<Staff> Staff { get; set; }
-
-        // Lookup Lists
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<MediaType> MediaTypes { get; set; }
     }
 }

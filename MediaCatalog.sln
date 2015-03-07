@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.DataAccess", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.Model", "MediaCatalog.Model\MediaCatalog.Model.csproj", "{E6225FCC-CCA8-4088-A1D4-8DE8641A096E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.Web", "MediaCatalog.Web\MediaCatalog.Web.csproj", "{A1102A66-F383-4101-830D-D9E4FFE489F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaCatalog.Web", "MediaCatalog.Web\MediaCatalog.Web.csproj", "{74E133A8-04DF-44E5-88DF-F48AE1ACF292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{E6225FCC-CCA8-4088-A1D4-8DE8641A096E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6225FCC-CCA8-4088-A1D4-8DE8641A096E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6225FCC-CCA8-4088-A1D4-8DE8641A096E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1102A66-F383-4101-830D-D9E4FFE489F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1102A66-F383-4101-830D-D9E4FFE489F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1102A66-F383-4101-830D-D9E4FFE489F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1102A66-F383-4101-830D-D9E4FFE489F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E133A8-04DF-44E5-88DF-F48AE1ACF292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E133A8-04DF-44E5-88DF-F48AE1ACF292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E133A8-04DF-44E5-88DF-F48AE1ACF292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E133A8-04DF-44E5-88DF-F48AE1ACF292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

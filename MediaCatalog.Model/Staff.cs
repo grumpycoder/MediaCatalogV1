@@ -1,15 +1,30 @@
-﻿namespace MediaCatalog.Model
+namespace MediaCatalog.Model
 {
-    public class Staff
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Staff")]
+    public partial class Staff
     {
-
-        public int PersonId { get; set; }
-        public Person Person { get; set; }
-
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MediaId { get; set; }
-        public Media Media { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int PersonId { get; set; }
 
         public int RoleId { get; set; }
-        public Role Role { get; set; }
+
+        public virtual Media Media { get; set; }
+
+        public virtual Person Person { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }
