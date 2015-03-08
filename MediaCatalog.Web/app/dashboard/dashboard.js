@@ -25,15 +25,15 @@
         }
 
         function getMessageCount() {
-            return datacontext.getMessageCount().then(function (data) {
-                return vm.messageCount = data;
-            });
+            //return datacontext.getMessageCount().then(function (data) {
+                //return vm.messageCount = data;
+            //});
         }
 
         function getPeople() {
-            return datacontext.getPeople().then(function (data) {
-                return vm.people = data;
-            });
+            //return datacontext.getPeople().then(function (data) {
+                //return vm.people = data;
+            //});
         }
     }
 })();

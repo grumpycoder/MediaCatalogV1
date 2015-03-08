@@ -1,36 +1,26 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'media';
-    angular.module('app').controller(controllerId, ['$location', 'common', 'datacontext', media]);
+    angular.module('app').controller(controllerId, ['$routeParams', 'common', 'datacontext', viewmodel]);
 
-    function media($location, common, datacontext) {
+    function viewmodel($routeParams, common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
         var vm = this;
-        vm.gotoMedia = gotoMedia;
-        vm.media = []; 
-        vm.title = 'Media Catalog';
+        vm.media = null; 
 
         activate();
 
         function activate() {
-            common.activateController([getMediaPartials()], controllerId)
-                .then(function() {
-                    log('Activated Media View');
-                    log('vm.media', vm.media);
-
-            });
+            common.activateController([getRequestedMedia()], controllerId)
+                .then(function () { log('Activated MediaDetail View'); });
         }
 
-        function gotoMedia(media) {
-            $location.path('/mediadetail/' + media.id);
-        }
-
-        function getMediaPartials() {
-            datacontext.getMediaPartials().then(function (data) {
-                log('data', data);
-                return vm.media = data; 
+        function getRequestedMedia() {
+            var val = $routeParams.id;
+            datacontext.getMediaById(val).then(function(data) {
+                vm.media = data; 
             });
         }
     }

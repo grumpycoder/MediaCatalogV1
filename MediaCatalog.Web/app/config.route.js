@@ -44,23 +44,23 @@
                     }
                 }
             }, {
-                url: '/media',
+                url: '/mediacatalog',
                 config: {
-                    title: 'media',
-                    templateUrl: 'app/media/media.html',
-                    controller: 'media',
+                    title: 'mediacatalog',
+                    templateUrl: 'app/media/mediacatalog.html',
+                    controller: 'mediacatalog',
                     controllerAs: 'vm',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-book"></i> Media'
+                        content: '<i class="fa fa-book"></i> Catalog'
                     }
                 }
             }, {
-                url: '/mediadetail/:id',
+                url: '/media/:id',
                 config: {
-                    title: 'mediadetail',
-                    templateUrl: 'app/media/mediadetail.html',
-                    controller: 'mediadetail',
+                    title: 'medai',
+                    templateUrl: 'app/media/media.html',
+                    controller: 'media',
                     controllerAs: 'vm',
                     settings: {}
                 }

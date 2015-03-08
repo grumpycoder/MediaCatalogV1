@@ -3,37 +3,15 @@
         <div class="container">
             <div class="row">
                 <div class="widget wviolet">
-                    <div data-cc-widget-header title="{{vm.title}}"></div>
-                    <tr class="widget-content user">
-
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <td>Title</td>
-                                    <td>Type</td>
-                                    <td>ISBN</td>
-                                    <td>Company</td>
-                                    <td>Summary</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="m in vm.media" ng-click="vm.gotoMedia(m)">
-                                    <td>{{m.title}}</td>
-                                    <td>{{m.mediaType_Name}}</td>
-                                    <td>{{m.iSBN}}</td>
-                                    <td>{{m.company_Name}}</td>
-                                    <td>{{m.summary}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                </div>
-                <div class="widget-foot">
-                    <div class="clearfix"></div>
+                    <div data-cc-widget-header title="{{vm.media.title}}"></div>
+                    <div class="widget-content user">
+                        <h3>Company: {{vm.media.company_Name}}</h3>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </section>
